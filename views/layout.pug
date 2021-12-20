@@ -1,0 +1,19 @@
+doctype html
+html(lang="et")
+  head
+    meta(charset="utf-8")
+    meta(http-equiv="X-UA-Compatible", content="IE=edge")
+    meta(name="viewport", content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0")
+    title= `${title} | Maksuamet`
+    link(href="./styles/styles.css", rel="stylesheet")
+  body
+    block header
+      .flex.py-6.text-lg
+        a.mr-8.ml-20.absolute(href="/") Maksuamet
+        ul.flex.mx-auto
+          each link in utils.menu
+            li.mr-2
+             a(href=link.slug class=(currentPath.startsWith(link.slug) ? "underline text-black" : "text-gray-500"))= link.title
+    .mt-10.mx-20
+      block content
+        p Default content
